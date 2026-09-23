@@ -1,6 +1,6 @@
 # NEYTRA Intelligence Platform — Website
 
-Official website: neytraintelligence.com
+Official website: https://neytraintelligence.com/
 
 **Primary project:** NEYTRA Intelligence Platform (NIP)  
 **Status:** Active development  
