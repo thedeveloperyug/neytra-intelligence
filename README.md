@@ -1,6 +1,6 @@
 # NEYTRA Intelligence Platform — Website
 
-Official website: https://thedeveloperyug.github.io/neytra-os-website/
+Official website: neytraintelligence.com
 
 **Primary project:** NEYTRA Intelligence Platform (NIP)  
 **Status:** Active development  
