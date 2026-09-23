@@ -109,6 +109,12 @@ html{overflow-x:hidden}body{width:100%;min-width:0}img,svg,canvas{max-width:100%
 @keyframes flowBar{0%{left:-30%;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:110%;opacity:0}}
 
 
+@property --card-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
 /* Universal flowing-light treatment — all website cards */
 :where(
   .lifecycle > div,
