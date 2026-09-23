@@ -107,3 +107,197 @@ html{overflow-x:hidden}body{width:100%;min-width:0}img,svg,canvas{max-width:100%
 @keyframes adaptiveRing{0%,100%{transform:scale(.94);opacity:.3}50%{transform:scale(1.08);opacity:1}}
 @keyframes adaptiveBeam{0%,100%{opacity:.15;transform:translate(-50%,-50%) scaleX(.65)}50%{opacity:.8;transform:translate(-50%,-50%) scaleX(1)}}
 @keyframes flowBar{0%{left:-30%;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:110%;opacity:0}}
+
+
+/* Universal flowing-light treatment — all website cards */
+:where(
+  .lifecycle > div,
+  .cards article,
+  .cap article,
+  .timeline article,
+  .tilt-card,
+  .execution-flow > div,
+  .os-grid > div,
+  .person-card,
+  .intel-node,
+  .model-chip,
+  .agent-grid > div,
+  .graph-tasks > div,
+  .os-platforms article
+){
+  --card-light-speed: 4.8s;
+  --card-radius: 18px;
+  position:relative;
+  isolation:isolate;
+}
+:where(
+  .lifecycle > div,
+  .cards article,
+  .cap article,
+  .timeline article,
+  .tilt-card,
+  .execution-flow > div,
+  .os-grid > div,
+  .person-card,
+  .intel-node,
+  .model-chip,
+  .agent-grid > div,
+  .graph-tasks > div,
+  .os-platforms article
+)::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  padding:1px;
+  border-radius:inherit;
+  background:conic-gradient(
+    from var(--card-angle,0deg),
+    transparent 0deg,
+    transparent 300deg,
+    #73ddff00 318deg,
+    #73ddff66 333deg,
+    #d9f8ff 343deg,
+    #73ddff66 353deg,
+    transparent 360deg
+  );
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask-composite:exclude;
+  opacity:.85;
+  pointer-events:none;
+  z-index:3;
+  animation:cardLightTravel var(--card-light-speed) linear infinite;
+  filter:drop-shadow(0 0 5px #50d7ff55);
+}
+:where(
+  .lifecycle > div,
+  .cards article,
+  .cap article,
+  .timeline article,
+  .tilt-card,
+  .execution-flow > div,
+  .os-grid > div,
+  .person-card,
+  .intel-node,
+  .model-chip,
+  .agent-grid > div,
+  .graph-tasks > div,
+  .os-platforms article
+)::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  z-index:-1;
+  background:radial-gradient(circle at 0% 50%,#67dfff12,transparent 38%);
+  opacity:.7;
+  animation:cardAmbientPulse 3.8s ease-in-out infinite;
+}
+.lifecycle > div:nth-child(2n)::before,
+.cards article:nth-child(2n)::before,
+.cap article:nth-child(2n)::before,
+.timeline article:nth-child(2n)::before,
+.execution-flow > div:nth-child(2n)::before,
+.os-grid > div:nth-child(2n)::before,
+.person-card:nth-child(2n)::before,
+.intel-node:nth-child(2n)::before,
+.model-chip:nth-child(2n)::before,
+.agent-grid > div:nth-child(2n)::before,
+.graph-tasks > div:nth-child(2n)::before,
+.os-platforms article:nth-child(2n)::before{
+  animation-delay:-1.7s;
+}
+.lifecycle > div:nth-child(3n)::before,
+.cards article:nth-child(3n)::before,
+.cap article:nth-child(3n)::before,
+.timeline article:nth-child(3n)::before,
+.execution-flow > div:nth-child(3n)::before,
+.os-grid > div:nth-child(3n)::before,
+.person-card:nth-child(3n)::before,
+.intel-node:nth-child(3n)::before,
+.model-chip:nth-child(3n)::before,
+.agent-grid > div:nth-child(3n)::before,
+.graph-tasks > div:nth-child(3n)::before,
+.os-platforms article:nth-child(3n)::before{
+  animation-delay:-3.1s;
+}
+.lifecycle > div:hover,
+.cards article:hover,
+.cap article:hover,
+.timeline article:hover,
+.execution-flow > div:hover,
+.os-grid > div:hover,
+.person-card:hover,
+.intel-node:hover,
+.model-chip:hover,
+.agent-grid > div:hover,
+.graph-tasks > div:hover,
+.os-platforms article:hover{
+  --card-light-speed:2.8s;
+}
+@keyframes cardLightTravel{
+  from{--card-angle:0deg;opacity:.3}
+  12%{opacity:.95}
+  50%{opacity:.8}
+  88%{opacity:.95}
+  to{--card-angle:360deg;opacity:.3}
+}
+@keyframes cardAmbientPulse{
+  0%,100%{opacity:.35}
+  50%{opacity:.8}
+}
+@media(max-width:720px){
+  :where(
+    .lifecycle > div,
+    .cards article,
+    .cap article,
+    .timeline article,
+    .tilt-card,
+    .execution-flow > div,
+    .os-grid > div,
+    .person-card,
+    .intel-node,
+    .model-chip,
+    .agent-grid > div,
+    .graph-tasks > div,
+    .os-platforms article
+  ){
+    --card-light-speed:5.8s;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  :where(
+    .lifecycle > div,
+    .cards article,
+    .cap article,
+    .timeline article,
+    .tilt-card,
+    .execution-flow > div,
+    .os-grid > div,
+    .person-card,
+    .intel-node,
+    .model-chip,
+    .agent-grid > div,
+    .graph-tasks > div,
+    .os-platforms article
+  )::before,
+  :where(
+    .lifecycle > div,
+    .cards article,
+    .cap article,
+    .timeline article,
+    .tilt-card,
+    .execution-flow > div,
+    .os-grid > div,
+    .person-card,
+    .intel-node,
+    .model-chip,
+    .agent-grid > div,
+    .graph-tasks > div,
+    .os-platforms article
+  )::after{
+    animation:none!important;
+  }
+}
