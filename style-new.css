@@ -646,3 +646,92 @@ html{overflow-x:hidden}body{width:100%;min-width:0}img,svg,canvas{max-width:100%
 @media(prefers-reduced-motion:reduce){
   .user-prompt,.user-prompt::before,.user-prompt::after,.example-task-status,.user-prompt .chat-bubble span{animation:none!important}
 }
+
+
+/* Intelligence router — modality-aware model taxonomy */
+.model-routing{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  align-items:stretch;
+}
+.model-chip{
+  min-height:72px;
+  padding:12px;
+  align-items:center;
+}
+.model-chip b{
+  font:600 11px/1.2 'Space Grotesk',sans-serif;
+  color:#dff7ff;
+}
+.model-chip small{
+  font:400 9px/1.35 Inter,system-ui,sans-serif;
+}
+.model-chip.active{
+  background:linear-gradient(145deg,#0a2639,#06131f);
+  box-shadow:inset 0 0 28px #2ecaff08;
+}
+.model-chip.local{
+  border-color:#63d7ff2b;
+}
+.model-logo{
+  font-family:'Space Grotesk',sans-serif;
+  box-shadow:inset 0 0 18px #39cfff08;
+}
+.route-example{
+  display:grid;
+  grid-template-columns:repeat(3,max-content max-content max-content);
+  justify-content:center;
+  align-items:center;
+  column-gap:8px;
+  row-gap:9px;
+  padding:16px 18px 12px;
+  font:500 9px/1.25 Inter,system-ui,sans-serif;
+}
+.route-example span{
+  color:#7591a2;
+}
+.route-example strong{
+  font:600 8px/1 'Space Grotesk',sans-serif;
+  letter-spacing:.04em;
+  white-space:nowrap;
+}
+.route-example b{
+  font-family:'Space Grotesk',sans-serif;
+}
+.router-note{
+  margin:0 auto 16px;
+  max-width:760px;
+  text-align:center;
+  color:#607b8c;
+  font:400 9px/1.6 Inter,system-ui,sans-serif;
+  letter-spacing:.01em;
+}
+.model-chip{
+  animation:routerChipFloat 5.5s ease-in-out infinite;
+}
+.model-chip:nth-child(2){animation-delay:-.7s}
+.model-chip:nth-child(3){animation-delay:-1.4s}
+.model-chip:nth-child(4){animation-delay:-2.1s}
+.model-chip:nth-child(5){animation-delay:-2.8s}
+.model-chip:nth-child(6){animation-delay:-3.5s}
+@keyframes routerChipFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-2px)}
+}
+@media(max-width:980px){
+  .model-routing{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .route-example{grid-template-columns:repeat(2,max-content max-content max-content)}
+}
+@media(max-width:650px){
+  .model-routing{grid-template-columns:1fr}
+  .route-example{
+    grid-template-columns:1fr auto auto;
+    justify-content:stretch;
+    text-align:left;
+  }
+  .route-example span{min-width:0}
+  .route-example strong{justify-self:end}
+  .router-note{font-size:8.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  .model-chip{animation:none!important}
+}
