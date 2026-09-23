@@ -373,3 +373,53 @@ html{overflow-x:hidden}body{width:100%;min-width:0}img,svg,canvas{max-width:100%
 @media(prefers-reduced-motion:reduce){
   .nip-idea-flow i{animation:none!important}
 }
+
+
+/* NIP-created agent example */
+.nip-agent-build{
+  position:relative;
+  margin-top:14px;
+  padding:16px;
+  border:1px solid #64dcff22;
+  border-radius:16px;
+  background:linear-gradient(135deg,#071522cc,#03101ac7);
+  overflow:hidden;
+}
+.nip-agent-build:after{
+  content:"";
+  position:absolute;
+  top:0;bottom:0;left:-35%;
+  width:30%;
+  background:linear-gradient(90deg,transparent,#73e4ff55,transparent);
+  filter:blur(4px);
+  animation:agentBuildSweep 3.2s linear infinite;
+}
+.build-label,.build-steps{position:relative;z-index:1}
+.build-label{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.build-label span{color:#73ddff;font-size:16px}
+.build-label b{font:700 11px 'Space Grotesk';letter-spacing:.13em;color:#dff8ff}
+.build-label small{width:100%;padding-left:25px;color:#6f8b9c;font-size:10px}
+.build-steps{
+  display:flex;align-items:center;justify-content:center;flex-wrap:wrap;
+  gap:7px;margin-top:14px
+}
+.build-steps span,.build-steps strong{
+  padding:7px 9px;border-radius:999px;border:1px solid #65dcff22;
+  background:#06131ddd;color:#91b3c2;font:600 8px 'Space Grotesk';letter-spacing:.08em
+}
+.build-steps strong{color:#e5fbff;border-color:#65dcff55}
+.build-steps i{font-style:normal;color:#56d8ff;font-size:13px}
+@keyframes agentBuildSweep{
+  0%{left:-35%;opacity:0}
+  15%{opacity:1}
+  85%{opacity:1}
+  100%{left:120%;opacity:0}
+}
+@media(max-width:720px){
+  .nip-agent-build{padding:14px}
+  .build-label small{line-height:1.5}
+  .build-steps{gap:5px}
+  .build-steps span,.build-steps strong{font-size:7px;padding:6px 7px}
+  .build-steps i{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){.nip-agent-build:after{animation:none}}
