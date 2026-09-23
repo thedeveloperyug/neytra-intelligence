@@ -95,7 +95,7 @@
       <div class="eyebrow">02 / HOW NIP THINKS</div>
       <h2>You give the goal.<br><span>NIP builds the intelligence.</span></h2>
     </div>
-    <p>From one request to a complex multi-task job, NIP turns intent into a coordinated intelligence workflow — choosing agents, models, tools and execution environments for each part of the work.</p>
+    <p>From one request to a complex multi-task job, NIP turns intent into a controlled execution graph — scheduling work, placing it on agents, invoking capabilities and model intelligence, then observing, reasoning and verifying the result.</p>
   </div>
 
   <div class="user-architecture">
@@ -106,93 +106,97 @@
       </div>
       <div class="task-label">YOUR REQUEST</div>
       <div class="chat-bubble">Build me an AI agent for my daily trading analysis. Connect it to my authorized market data and research sources, analyze my watchlist, compare signals, generate a risk-aware daily report, and improve the workflow from verified feedback.</div>
-      <div class="chat-bubble multi">Give NIP <strong>the outcome</strong>. NIP decides how the intelligence should be assembled:<br>
-        <span>① Understand</span><span>② Create agents</span><span>③ Connect capabilities</span><span>④ Evaluate</span><span>⑤ Improve</span>
+      <div class="chat-bubble multi">Give NIP <strong>the outcome</strong>. NIP decides how the execution system should be assembled:<br>
+        <span>① Understand</span><span>② Decompose</span><span>③ Schedule + place</span><span>④ Execute</span><span>⑤ Verify + recover</span>
       </div>
       <div class="nip-agent-build">
-        <div class="build-label"><span>✦</span><b>NIP BUILDS THE AGENT</b><small>Not just a prompt — a coordinated intelligence workflow.</small></div>
+        <div class="build-label"><span>✦</span><b>NIP ASSEMBLES INTELLIGENCE</b><small>Agent composition is built around the execution contracts — not a single model.</small></div>
         <div class="build-steps">
-          <span>Goal</span><i>→</i><span>Agent design</span><i>→</i><span>Models + tools</span><i>→</i><span>Test + verify</span><i>→</i><strong>Deploy</strong>
+          <span>Goal</span><i>→</i><span>Work graph</span><i>→</i><span>Agent + capabilities</span><i>→</i><span>Model resources</span><i>→</i><strong>Verified execution</strong>
         </div>
       </div>
     </div>
 
-    <div class="user-arrow"><span>↓</span><b>UNDERSTAND</b><small>Goal · context · constraints</small></div>
+    <div class="user-arrow"><span>↓</span><b>01 · ORCHESTRATE WORK</b><small>Turn intent into jobs, tasks, dependencies and schedulable work.</small></div>
 
     <div class="intel-layer">
-      <div class="layer-title"><span>01</span><b>INTELLIGENCE ORCHESTRATION</b><small>Break the request into work that can happen together or in sequence.</small></div>
+      <div class="layer-title"><span>01</span><b>WORK ORCHESTRATION</b><small>Matches the implemented NIP control-plane foundation: Job → Task Graph → WorkItem → Scheduler.</small></div>
       <div class="intel-grid">
-        <div class="intel-node"><i>◈</i><b>PLAN</b><small>Understand what needs to happen</small></div>
-        <div class="intel-node"><i>◇</i><b>DECOMPOSE</b><small>Turn one goal into many tasks</small></div>
-        <div class="intel-node"><i>↗</i><b>PARALLELIZE</b><small>Run independent work together</small></div>
-        <div class="intel-node"><i>↻</i><b>ADAPT</b><small>Replan when reality changes</small></div>
+        <div class="intel-node"><i>◈</i><b>JOB / TASK</b><small>Capture objective and execution intent</small></div>
+        <div class="intel-node"><i>◇</i><b>TASK GRAPH</b><small>Dependencies and readiness</small></div>
+        <div class="intel-node"><i>↗</i><b>WORK ITEM</b><small>Schedulable projection of work</small></div>
+        <div class="intel-node"><i>↻</i><b>SCHEDULER</b><small>Admission, ordering and backpressure</small></div>
       </div>
     </div>
 
-    <div class="user-arrow"><span>↓</span><b>CHOOSE INTELLIGENCE</b><small>Match each task to the right agent + model</small></div>
-
-    <div class="routing-layer">
-      <div class="layer-title"><span>02</span><b>INTELLIGENCE ROUTER</b><small>NIP can combine different intelligence sources instead of forcing every task through one model.</small></div>
-      <div class="model-routing">
-        <div class="model-chip active"><span class="model-logo">T</span><div><b>GPT-5.6 Sol</b><small>Text · reasoning · coding</small></div></div>
-        <div class="model-chip"><span class="model-logo">V</span><div><b>Gemini 3.1 Pro</b><small>Vision · image · video understanding</small></div></div>
-        <div class="model-chip"><span class="model-logo">▶</span><div><b>Veo 3.1</b><small>Video generation · audio</small></div></div>
-        <div class="model-chip"><span class="model-logo">♪</span><div><b>Eleven v3</b><small>Voice · speech · audio generation</small></div></div>
-        <div class="model-chip"><span class="model-logo">ST</span><div><b>Scribe v2</b><small>Speech-to-text · transcription</small></div></div>
-        <div class="model-chip local"><span class="model-logo">L</span><div><b>Qwen3-32B</b><small>Local · open-weight · private</small></div></div>
-      </div>
-      <div class="route-example">
-        <span>Text / reasoning</span><b>→</b><strong>GPT-5.6 Sol</strong>
-        <span>Image / video input</span><b>→</b><strong>Gemini 3.1 Pro</strong>
-        <span>Video creation</span><b>→</b><strong>Veo 3.1</strong>
-        <span>Voice / audio</span><b>→</b><strong>Eleven v3</strong>
-        <span>Speech input</span><b>→</b><strong>Scribe v2</strong>
-        <span>Private / local</span><b>→</b><strong>Qwen3-32B</strong>
-      </div>
-      <div class="router-note">Illustrative model examples · NIP routes by modality, capability, policy, privacy, latency and available resources.</div>
-    </div>
-
-    <div class="user-arrow"><span>↓</span><b>CREATE · ASSIGN · SWITCH AGENTS</b><small>NIP can assemble a new agent, assign capabilities, or replace a worker when the task demands it</small></div>
+    <div class="user-arrow"><span>↓</span><b>02 · PLACE + OWN EXECUTION</b><small>Decide where work runs, then establish concrete ownership.</small></div>
 
     <div class="agents-layer">
-      <div class="layer-title"><span>03</span><b>AGENT CREATION & COLLABORATION</b><small>NIP can assemble task-specific agents from capabilities, models, tools, memory and policies — then coordinate or replace them as the work evolves.</small></div>
+      <div class="layer-title"><span>02</span><b>AGENT PLACEMENT & EXECUTION OWNERSHIP</b><small>Placement answers <strong>where?</strong>; ExecutionManager establishes the attempt, lease and fence before runtime execution.</small></div>
       <div class="agent-grid">
-        <div><span>🧠</span><b>Research Agent</b><small>Find · compare · summarize</small></div>
-        <div><span>💻</span><b>Code Agent</b><small>Build · test · debug</small></div>
-        <div><span>📊</span><b>Analysis Agent</b><small>Reason · calculate · interpret</small></div>
-        <div><span>🎨</span><b>Creation Agent</b><small>Write · design · produce</small></div>
-        <div><span>🔍</span><b>Verification Agent</b><small>Check · challenge · validate</small></div>
-        <div><span>⚙️</span><b>Agent Builder</b><small>Compose · evaluate · improve</small></div>
+        <div><span>◌</span><b>AGENT REGISTRY</b><small>Identity · liveness · capability · capacity</small></div>
+        <div><span>⌖</span><b>AGENT PLACEMENT</b><small>Deterministic worker selection</small></div>
+        <div><span>◈</span><b>EXECUTION ATTEMPT</b><small>One concrete execution identity</small></div>
+        <div><span>⛨</span><b>LEASE + FENCE</b><small>Worker ownership generation</small></div>
+        <div><span>▶</span><b>AGENT RUNTIME</b><small>Admission · cancellation · result</small></div>
+        <div><span>✦</span><b>AGENT COMPOSITION</b><small>Higher-level composition can use these stable runtime contracts</small></div>
       </div>
     </div>
 
-    <div class="user-arrow"><span>↓</span><b>EXECUTE TOGETHER</b><small>Independent tasks can run in parallel while dependencies stay ordered</small></div>
+    <div class="user-arrow"><span>↓</span><b>03 · CORE EXECUTION</b><small>The runtime hands the owned execution to the Core orchestration lifecycle.</small></div>
 
     <div class="parallel-layer">
-      <div class="layer-title"><span>04</span><b>PARALLEL EXECUTION</b><small>One user request can become a live graph of cooperating work.</small></div>
+      <div class="layer-title"><span>03</span><b>CORE ORCHESTRATOR</b><small>Core coordinates Planner, Agent, Executor, Observer, Critic, Reasoner and Verifier around one controlled task lifecycle.</small></div>
       <div class="parallel-graph">
-        <div class="graph-start">YOUR GOAL</div>
+        <div class="graph-start">AGENT RUNTIME → CORE</div>
         <div class="graph-lines"><i></i><i></i><i></i></div>
         <div class="graph-tasks">
-          <div><b>Research</b><small>Agent A + Model</small></div>
-          <div><b>Data Analysis</b><small>Agent B + Model</small></div>
-          <div><b>Code / Build</b><small>Agent C + Local Model</small></div>
+          <div><b>PLAN</b><small>Planner builds a validated plan</small></div>
+          <div><b>EXECUTE</b><small>Agent + Executor perform steps</small></div>
+          <div><b>OBSERVE</b><small>Evidence is correlated to work</small></div>
         </div>
-        <div class="graph-merge">↘ <span>COORDINATE</span> ↙</div>
-        <div class="graph-result"><b>VERIFY → FINAL RESULT</b><small>Evidence · quality · acceptance</small></div>
+        <div class="graph-merge">↘ <span>CRITIQUE → REASON</span> ↙</div>
+        <div class="graph-result"><b>VERIFY → TASK RESULT</b><small>Evidence · acceptance · terminal outcome</small></div>
       </div>
     </div>
 
-    <div class="user-arrow"><span>↓</span><b>ACT IN THE WORLD</b><small>Use authorized capabilities across your environment</small></div>
+    <div class="user-arrow"><span>↓</span><b>04 · CAPABILITY INTELLIGENCE</b><small>Execution requests are resolved to permitted capability implementations.</small></div>
 
     <div class="environment-layer">
-      <div class="layer-title"><span>05</span><b>CAPABILITIES & ENVIRONMENT</b><small>Tools and applications become capabilities NIP can reason about and use under policy.</small></div>
+      <div class="layer-title"><span>04</span><b>CAPABILITY INTELLIGENCE</b><small>Capability discovery, registry, policy, routing and execution remain separate from agent placement and model selection.</small></div>
       <div class="environment-grid">
-        <span>Web & APIs</span><span>Market Data</span><span>News & Research</span><span>Files</span><span>Code & Terminal</span><span>Applications</span><span>Databases</span><span>Cloud Services</span><span>Devices</span><span>Linux</span><span>NEYTRA OS</span>
+        <span>Discover</span><span>Register</span><span>Describe</span><span>Policy</span><span>Route</span><span>Execute</span><span>Web & APIs</span><span>Files</span><span>Code & Terminal</span><span>Databases</span><span>OS Services</span>
       </div>
     </div>
 
-    <div class="user-arrow final-arrow"><span>↓</span><b>OBSERVE · VERIFY · RETURN</b><small>NIP checks the result and brings the outcome back to you.</small></div>
+    <div class="user-arrow"><span>↓</span><b>05 · CRITIQUE + REASON</b><small>Reasoner may invoke Model Intelligence; this is a dependency, not a second scheduler.</small></div>
+
+    <div class="routing-layer">
+      <div class="layer-title"><span>05</span><b>MODEL INTELLIGENCE</b><small>Model selection happens inside the reasoning boundary: Registry → Resolver → Policy → Adapter → Model.</small></div>
+      <div class="model-routing">
+        <div class="model-family"><b>TEXT · REASONING · CODING</b><span>GPT-5.6 Sol</span><span>Claude Opus 4.1</span><span>Qwen3-235B-A22B</span></div>
+        <div class="model-family"><b>VISION · MULTIMODAL</b><span>Gemini 3.1 Pro</span><span>Llama 4 Maverick</span><span>Llama 4 Scout</span></div>
+        <div class="model-family"><b>VIDEO GENERATION</b><span>Veo 3.1</span><span>Veo 3.1 Lite</span></div>
+        <div class="model-family"><b>VOICE · SPEECH</b><span>Eleven v3</span><span>Eleven v3 Conversational</span><span>Gemini 3.8 Audio</span></div>
+        <div class="model-family"><b>SPEECH → TEXT</b><span>Scribe v2</span><span>Scribe v2 Realtime</span><span>Gemini 3.5 Audio</span></div>
+        <div class="model-family"><b>MUSIC · SOUND</b><span>Lyria 3.5</span><span>Lyria 3</span><span>Veo 3.1</span></div>
+        <div class="model-family local"><b>LOCAL · OPEN-WEIGHT</b><span>Qwen3-235B-A22B</span><span>Qwen3-30B-A3B</span><span>Llama 4 Scout</span></div>
+      </div>
+      <div class="route-example">
+        <span>NIP routes by task requirements</span><b>→</b><strong>modality · capability · policy · privacy · latency · resources</strong>
+      </div>
+      <div class="router-note">Illustrative model examples only · NIP's Model Intelligence contract is provider-neutral and does not depend on one named model.</div>
+    </div>
+
+    <div class="user-arrow final-arrow"><span>↓</span><b>06 · VERIFY · RECOVER · RETURN</b><small>Verification gates completion; failures become explicit recovery, replacement or replanning signals.</small></div>
+
+    <div class="verification-layer">
+      <div class="layer-title"><span>06</span><b>VERIFICATION & RECOVERY</b><small>Core verification and orchestration recovery preserve authoritative state while failed workers, models or capabilities can be replaced.</small></div>
+      <div class="verification-flow">
+        <span>OBSERVATION</span><i>→</i><span>CRITIC</span><i>→</i><span>REASONER</span><i>→</i><span>VERIFIER</span><i>→</i><strong>RESULT</strong>
+      </div>
+      <div class="verification-recovery">Failure paths: <b>retry</b> · <b>replace</b> · <b>reroute</b> · <b>replan</b> · <b>cancel</b></div>
+    </div>
   </div>
 
   <div class="architecture-principle">
