@@ -927,3 +927,112 @@ html{overflow-x:hidden}body{width:100%;min-width:0}img,svg,canvas{max-width:100%
   .model-family::before,
   .verification-layer::before{animation:none!important}
 }
+
+
+/* Smoothness pass: preserve the flowing-light look while moving the animation to transform/opacity. */
+:where(
+  .lifecycle > div,
+  .cards article,
+  .cap article,
+  .timeline article,
+  .execution-flow > div,
+  .os-grid > div,
+  .person-card,
+  .intel-node,
+  .model-chip,
+  .agent-grid > div,
+  .graph-tasks > div,
+  .os-platforms article,
+  .arch-layer,
+  .nip-node,
+  .founder-card,
+  .ownership,
+  .terminal-panel,
+  .user-prompt,
+  .intel-layer,
+  .routing-layer,
+  .agents-layer,
+  .parallel-layer,
+  .environment-layer,
+  .adaptive-note,
+  .architecture-principle,
+  .model-family,
+  .verification-layer
+)::before{
+  background:conic-gradient(
+    #73ddff00 0deg,
+    #73ddff00 300deg,
+    #73ddff44 326deg,
+    #d9f8ff 343deg,
+    #73ddff44 355deg,
+    #73ddff00 360deg
+  ) !important;
+  animation:cardLightTransform 5.8s linear infinite !important;
+  filter:none !important;
+  transform:translateZ(0);
+}
+@keyframes cardLightTransform{
+  from{transform:translateZ(0) rotate(0deg);opacity:.28}
+  12%{opacity:.72}
+  50%{opacity:.6}
+  88%{opacity:.72}
+  to{transform:translateZ(0) rotate(360deg);opacity:.28}
+}
+.model-family::before,
+.verification-layer::before{
+  animation-duration:6.2s !important;
+}
+:where(.cards article,.cap article,.timeline article,.execution-flow > div,.intel-node,.model-chip,.agent-grid > div,.graph-tasks > div,.os-platforms article,.model-family,.verification-layer){
+  contain:paint;
+}
+@media(max-width:720px){
+  :where(
+    .lifecycle > div,.cards article,.cap article,.timeline article,
+    .execution-flow > div,.os-grid > div,.person-card,.intel-node,
+    .model-chip,.agent-grid > div,.graph-tasks > div,.os-platforms article,
+    .arch-layer,.nip-node,.founder-card,.ownership,.terminal-panel,
+    .user-prompt,.intel-layer,.routing-layer,.agents-layer,.parallel-layer,
+    .environment-layer,.adaptive-note,.architecture-principle,.model-family,
+    .verification-layer
+  )::before{
+    animation-duration:7.2s !important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  :where(
+    .lifecycle > div,.cards article,.cap article,.timeline article,
+    .execution-flow > div,.os-grid > div,.person-card,.intel-node,
+    .model-chip,.agent-grid > div,.graph-tasks > div,.os-platforms article,
+    .arch-layer,.nip-node,.founder-card,.ownership,.terminal-panel,
+    .user-prompt,.intel-layer,.routing-layer,.agents-layer,.parallel-layer,
+    .environment-layer,.adaptive-note,.architecture-principle,.model-family,
+    .verification-layer
+  )::before{animation:none!important}
+}
+
+/* Keep the architecture typography on the same visual system as the rest of NIP. */
+.model-family{
+  min-height:92px;
+  padding:14px;
+  gap:7px;
+  background:#06111c;
+  border:1px solid var(--line);
+  border-radius:15px;
+  box-shadow:none;
+}
+.model-family b{
+  color:#7ebce7;
+  font:700 9px 'Space Grotesk',sans-serif;
+  letter-spacing:.14em;
+}
+.model-family span{
+  padding:6px 9px;
+  color:#a9c4d2;
+  background:#071722;
+  border:1px solid #5ecaff22;
+  font:600 9px 'Space Grotesk',sans-serif;
+}
+.model-family.local{
+  background:#06111c;
+  border-color:var(--line);
+}
