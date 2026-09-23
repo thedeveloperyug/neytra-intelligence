@@ -116,91 +116,6 @@ html{overflow-x:hidden}body{width:100%;min-width:0}img,svg,canvas{max-width:100%
 }
 
 /* Universal flowing-light treatment — all website cards */
-:where(
-  .lifecycle > div,
-  .cards article,
-  .cap article,
-  .timeline article,
-  .tilt-card,
-  .execution-flow > div,
-  .os-grid > div,
-  .person-card,
-  .intel-node,
-  .model-chip,
-  .agent-grid > div,
-  .graph-tasks > div,
-  .os-platforms article
-){
-  --card-light-speed: 4.8s;
-  --card-radius: 18px;
-  position:relative;
-  isolation:isolate;
-}
-:where(
-  .lifecycle > div,
-  .cards article,
-  .cap article,
-  .timeline article,
-  .tilt-card,
-  .execution-flow > div,
-  .os-grid > div,
-  .person-card,
-  .intel-node,
-  .model-chip,
-  .agent-grid > div,
-  .graph-tasks > div,
-  .os-platforms article
-)::before{
-  content:"";
-  position:absolute;
-  inset:-1px;
-  padding:1px;
-  border-radius:inherit;
-  background:conic-gradient(
-    from var(--card-angle,0deg),
-    transparent 0deg,
-    transparent 300deg,
-    #73ddff00 318deg,
-    #73ddff66 333deg,
-    #d9f8ff 343deg,
-    #73ddff66 353deg,
-    transparent 360deg
-  );
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor;
-  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  mask-composite:exclude;
-  opacity:.85;
-  pointer-events:none;
-  z-index:3;
-  animation:cardLightTravel var(--card-light-speed) linear infinite;
-  filter:drop-shadow(0 0 5px #50d7ff55);
-}
-:where(
-  .lifecycle > div,
-  .cards article,
-  .cap article,
-  .timeline article,
-  .tilt-card,
-  .execution-flow > div,
-  .os-grid > div,
-  .person-card,
-  .intel-node,
-  .model-chip,
-  .agent-grid > div,
-  .graph-tasks > div,
-  .os-platforms article
-)::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:inherit;
-  pointer-events:none;
-  z-index:-1;
-  background:radial-gradient(circle at 0% 50%,#67dfff12,transparent 38%);
-  opacity:.7;
-  animation:cardAmbientPulse 3.8s ease-in-out infinite;
-}
 .lifecycle > div:nth-child(2n)::before,
 .cards article:nth-child(2n)::before,
 .cap article:nth-child(2n)::before,
@@ -250,8 +165,6 @@ html{overflow-x:hidden}body{width:100%;min-width:0}img,svg,canvas{max-width:100%
   88%{opacity:.95}
   to{--card-angle:360deg;opacity:.3}
 }
-@keyframes cardAmbientPulse{
-  0%,100%{opacity:.35}
   50%{opacity:.8}
 }
 @media(max-width:720px){
@@ -306,4 +219,69 @@ html{overflow-x:hidden}body{width:100%;min-width:0}img,svg,canvas{max-width:100%
   )::after{
     animation:none!important;
   }
+}
+
+
+/* Flowing-light borders for the remaining card-like panels */
+:where(
+  .arch-layer,
+  .nip-node,
+  .founder-card,
+  .ownership,
+  .terminal-panel,
+  .user-prompt,
+  .intel-layer,
+  .routing-layer,
+  .agents-layer,
+  .parallel-layer,
+  .environment-layer,
+  .adaptive-note,
+  .architecture-principle
+){
+  --card-light-speed:5.2s;
+  position:relative;
+  isolation:isolate;
+}
+:where(
+  .arch-layer,
+  .nip-node,
+  .founder-card,
+  .ownership,
+  .terminal-panel,
+  .user-prompt,
+  .intel-layer,
+  .routing-layer,
+  .agents-layer,
+  .parallel-layer,
+  .environment-layer,
+  .adaptive-note,
+  .architecture-principle
+)::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  padding:1px;
+  border-radius:inherit;
+  background:conic-gradient(
+    from var(--card-angle,0deg),
+    transparent 0deg,
+    transparent 300deg,
+    #73ddff00 318deg,
+    #73ddff66 333deg,
+    #d9f8ff 343deg,
+    #73ddff66 353deg,
+    transparent 360deg
+  );
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask-composite:exclude;
+  opacity:.75;
+  pointer-events:none;
+  z-index:3;
+  animation:cardLightTravel var(--card-light-speed) linear infinite;
+  filter:drop-shadow(0 0 5px #50d7ff55);
+}
+:where(.arch-layer,.nip-node,.founder-card,.ownership,.terminal-panel,.user-prompt,.intel-layer,.routing-layer,.agents-layer,.parallel-layer,.environment-layer,.adaptive-note,.architecture-principle):hover{
+  --card-light-speed:3s;
 }
