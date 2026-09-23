@@ -431,3 +431,151 @@ html{overflow-x:hidden}body{width:100%;min-width:0}img,svg,canvas{max-width:100%
   background:radial-gradient(circle at 50% 0,#18bfff14,transparent 70%),#06111ac7;
 }
 .agent-grid > div:last-child b{color:#c9f4ff}
+
+
+/* NIP idea typography + animation alignment */
+.architecture-principle{
+  isolation:isolate;
+  overflow:hidden;
+  position:relative;
+  padding:clamp(32px,5vw,58px) clamp(22px,4vw,52px);
+  background:
+    radial-gradient(circle at 50% 8%,#16bfff0d,transparent 42%),
+    linear-gradient(145deg,#071522d9,#02070dd9);
+}
+.architecture-principle > *{
+  position:relative;
+  z-index:4;
+}
+.architecture-principle::after{
+  content:"";
+  position:absolute;
+  inset:1px;
+  z-index:0;
+  pointer-events:none;
+  background:radial-gradient(circle at 50% 0,#6edfff0c,transparent 48%);
+  animation:nipIdeaAtmosphere 6.8s ease-in-out infinite;
+}
+.architecture-principle::before{
+  z-index:2;
+  opacity:.72;
+  filter:drop-shadow(0 0 7px #50d7ff44);
+}
+.nip-idea-label{
+  display:block;
+  margin:0 0 15px;
+  color:#74dcff;
+  font:700 10px/1 'Space Grotesk',sans-serif;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  text-shadow:0 0 18px #42cfff35;
+  animation:nipIdeaLabel 6.8s ease-in-out infinite;
+}
+.nip-idea-title{
+  display:block;
+  max-width:900px;
+  margin:0 auto;
+  color:#f2fbff;
+  font:600 clamp(29px,4.2vw,52px)/1.04 'Space Grotesk',sans-serif;
+  letter-spacing:-.045em;
+  text-wrap:balance;
+  text-shadow:0 0 35px #31bfff12;
+}
+.nip-idea-body,
+.nip-idea-recovery{
+  max-width:780px!important;
+  margin:20px auto 0!important;
+  color:#8da3b2!important;
+  font:400 clamp(13px,1.25vw,15px)/1.82 Inter,system-ui,sans-serif!important;
+  letter-spacing:.005em;
+  text-wrap:pretty;
+}
+.nip-idea-body strong,
+.nip-idea-recovery strong{
+  color:#dff8ff!important;
+  font-weight:600;
+}
+.nip-idea-recovery{
+  margin-top:13px!important;
+}
+.nip-idea-flow{
+  position:relative;
+  z-index:4;
+  margin:28px auto 20px;
+  width:min(100%,980px);
+  padding:14px 16px;
+  gap:7px;
+  border-color:#5ecfff2c;
+  box-shadow:inset 0 0 35px #19bfff09,0 0 35px #18aaff08;
+}
+.nip-idea-flow::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background:linear-gradient(90deg,transparent,#73e4ff10 48%,#73e4ff20 50%,#73e4ff10 52%,transparent);
+  background-size:220% 100%;
+  animation:nipIdeaSweep 6.8s linear infinite;
+  pointer-events:none;
+}
+.nip-idea-flow span,
+.nip-idea-flow strong{
+  font:600 9px/1 'Space Grotesk',sans-serif;
+  letter-spacing:.095em;
+  white-space:nowrap;
+  box-shadow:inset 0 0 18px #35cfff06;
+}
+.nip-idea-flow i{
+  position:relative;
+  z-index:2;
+  font-family:'Space Grotesk',sans-serif;
+  animation:nipIdeaArrow 1.35s ease-in-out infinite;
+}
+.nip-idea-punchline{
+  display:block;
+  max-width:900px;
+  margin:12px auto 0!important;
+  color:#c9f3ff!important;
+  font:600 clamp(15px,1.9vw,21px)/1.4 'Space Grotesk',sans-serif!important;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  text-shadow:0 0 24px #35cfff18;
+}
+.nip-idea-close{
+  max-width:760px!important;
+  margin:12px auto 0!important;
+  color:#748f9f!important;
+  font-size:12px!important;
+  line-height:1.7!important;
+}
+@keyframes nipIdeaAtmosphere{
+  0%,100%{opacity:.45;transform:scale(1)}
+  50%{opacity:1;transform:scale(1.035)}
+}
+@keyframes nipIdeaLabel{
+  0%,100%{opacity:.72;letter-spacing:.22em}
+  50%{opacity:1;letter-spacing:.27em;text-shadow:0 0 24px #42cfff70}
+}
+@keyframes nipIdeaSweep{
+  0%{background-position:120% 0;opacity:0}
+  15%{opacity:1}
+  85%{opacity:1}
+  100%{background-position:-120% 0;opacity:0}
+}
+@media(max-width:720px){
+  .architecture-principle{padding:30px 17px}
+  .nip-idea-label{font-size:9px;letter-spacing:.19em}
+  .nip-idea-title{font-size:30px;line-height:1.06;letter-spacing:-.035em}
+  .nip-idea-body,.nip-idea-recovery{font-size:12.5px!important;line-height:1.72!important}
+  .nip-idea-flow{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:7px;padding:12px}
+  .nip-idea-flow span,.nip-idea-flow strong{white-space:normal;padding:8px 5px;font-size:7.5px;line-height:1.25;text-align:center}
+  .nip-idea-flow i{font-size:13px}
+  .nip-idea-punchline{font-size:16px!important;line-height:1.4!important}
+  .nip-idea-close{font-size:11.5px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .architecture-principle::after,
+  .nip-idea-label,
+  .nip-idea-flow::before,
+  .nip-idea-flow i{animation:none!important}
+}
