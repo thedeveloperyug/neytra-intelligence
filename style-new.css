@@ -423,3 +423,11 @@ html{overflow-x:hidden}body{width:100%;min-width:0}img,svg,canvas{max-width:100%
   .build-steps i{font-size:11px}
 }
 @media(prefers-reduced-motion:reduce){.nip-agent-build:after{animation:none}}
+
+
+/* Agent builder node */
+.agent-grid > div:last-child{
+  border-color:#65dcff38;
+  background:radial-gradient(circle at 50% 0,#18bfff14,transparent 70%),#06111ac7;
+}
+.agent-grid > div:last-child b{color:#c9f4ff}
