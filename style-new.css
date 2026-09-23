@@ -579,3 +579,70 @@ html{overflow-x:hidden}body{width:100%;min-width:0}img,svg,canvas{max-width:100%
   .nip-idea-flow::before,
   .nip-idea-flow i{animation:none!important}
 }
+
+
+/* Example task card — typography + coordinated animation */
+.user-prompt{
+  --task-light-speed:5.4s;
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:clamp(22px,3vw,30px);
+  border:1px solid #62d3ff38;
+  border-radius:22px;
+  background:radial-gradient(circle at 85% 0,#19bfff0b,transparent 38%),linear-gradient(145deg,#091a29e8,#020910e8);
+  box-shadow:0 24px 90px #00111e38,inset 0 1px #dff8ff08;
+  animation:exampleTaskBreath 4.8s ease-in-out infinite;
+}
+.user-prompt::before{
+  content:"";position:absolute;inset:-1px;z-index:5;padding:1px;border-radius:inherit;
+  background:conic-gradient(from var(--card-angle,0deg),transparent 0deg,transparent 294deg,#73ddff00 312deg,#73ddff55 329deg,#e5fbff 340deg,#73ddff55 351deg,transparent 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;
+  pointer-events:none;opacity:.95;filter:drop-shadow(0 0 8px #43d5ff55);
+  animation:cardLightTravel var(--task-light-speed) linear infinite;
+}
+.user-prompt::after{
+  content:"";position:absolute;z-index:0;top:0;bottom:0;left:-32%;width:28%;
+  background:linear-gradient(90deg,transparent,#7be5ff18,#dffbff35,#7be5ff18,transparent);
+  filter:blur(7px);pointer-events:none;animation:exampleTaskSweep 4.2s ease-in-out infinite;
+}
+.user-prompt > *{position:relative;z-index:2}
+.example-task-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:15px;border-bottom:1px solid #61d2ff18}
+.example-task-head .chat-head{min-width:0}
+.example-task-head .chat-head b{font:700 11px/1 'Space Grotesk',sans-serif;letter-spacing:.16em;color:#e6f9ff}
+.example-task-head .chat-head small{font:400 10px/1 Inter,system-ui,sans-serif;color:#6f8797;letter-spacing:0}
+.example-task-status{
+  flex:0 0 auto;padding:6px 9px;border:1px solid #65d8ff2b;border-radius:999px;color:#73dcff;background:#061722b8;
+  font:700 8px/1 'Space Grotesk',sans-serif;letter-spacing:.13em;animation:exampleStatusPulse 2.4s ease-in-out infinite;
+}
+.task-label{margin:17px 0 9px;color:#5faed1;font:700 9px/1 'Space Grotesk',sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.user-prompt .chat-bubble{
+  position:relative;z-index:2;max-width:100%;margin:0;padding:19px 20px;border:1px solid #66d4ff1c;border-radius:15px;
+  background:linear-gradient(145deg,#0b2234dc,#071421d9);color:#d7edf7;
+  font:500 clamp(13px,1.25vw,15px)/1.72 Inter,system-ui,sans-serif;letter-spacing:.002em;
+  box-shadow:inset 0 1px #dff8ff08,0 10px 35px #00111e25;text-wrap:pretty;
+}
+.user-prompt .chat-bubble.multi{max-width:94%;margin:12px 0 0 auto;padding:14px 16px;color:#8fa9b8;font:400 11px/1.65 Inter,system-ui,sans-serif;background:#06131edb}
+.user-prompt .chat-bubble.multi strong{color:#dff8ff;font-weight:600}
+.user-prompt .chat-bubble span{
+  margin:9px 7px 0 0;padding:6px 9px;border:1px solid #68cfff25;border-radius:999px;color:#88c9df;background:#071925c9;
+  font:600 8px/1 'Space Grotesk',sans-serif;letter-spacing:.08em;box-shadow:inset 0 0 15px #32cfff06;
+  animation:exampleChipPulse 3.2s ease-in-out infinite;
+}
+.user-prompt .chat-bubble span:nth-child(2){animation-delay:.2s}.user-prompt .chat-bubble span:nth-child(3){animation-delay:.4s}
+.user-prompt .chat-bubble span:nth-child(4){animation-delay:.6s}.user-prompt .chat-bubble span:nth-child(5){animation-delay:.8s}.user-prompt .chat-bubble span:nth-child(6){animation-delay:1s}
+.user-prompt:hover{--task-light-speed:3s;transform:translateY(-3px);border-color:#71d9ff55;box-shadow:0 30px 100px #005ab02e,inset 0 1px #dff8ff0d}
+@keyframes exampleTaskBreath{0%,100%{box-shadow:0 24px 90px #00111e38,inset 0 1px #dff8ff08}50%{box-shadow:0 28px 100px #006fae1f,inset 0 1px #dff8ff12}}
+@keyframes exampleTaskSweep{0%{left:-32%;opacity:0}12%{opacity:1}80%{opacity:1}100%{left:125%;opacity:0}}
+@keyframes exampleStatusPulse{0%,100%{opacity:.62;box-shadow:0 0 0 #4cd4ff00}50%{opacity:1;box-shadow:0 0 20px #4cd4ff25}}
+@keyframes exampleChipPulse{0%,100%{border-color:#68cfff20;transform:translateY(0)}50%{border-color:#68cfff50;transform:translateY(-1px)}}
+@media(max-width:720px){
+  .user-prompt{padding:18px;border-radius:19px}.example-task-head{align-items:flex-start}
+  .example-task-head .chat-head{flex-wrap:wrap;gap:8px}.example-task-head .chat-head small{width:100%;margin-left:18px}
+  .example-task-status{font-size:7px;padding:6px 7px}.task-label{margin-top:14px}
+  .user-prompt .chat-bubble{font-size:12px;line-height:1.68;padding:16px}.user-prompt .chat-bubble.multi{max-width:100%;font-size:10.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  .user-prompt,.user-prompt::before,.user-prompt::after,.example-task-status,.user-prompt .chat-bubble span{animation:none!important}
+}
