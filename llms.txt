@@ -1,0 +1,48 @@
+# Neytra Intelligence
+
+> Neytra Intelligence is the creator of the NEYTRA Intelligence Platform (NIP), an OS-agnostic intelligent execution platform.
+
+## Official website
+
+https://neytraintelligence.com/
+
+## NEYTRA Intelligence Platform (NIP)
+
+NIP is an intelligent execution platform designed to turn goals into controlled, observable and verifiable work across agents, models, tools, applications and operating systems.
+
+Core concepts include:
+- Goal-driven agent execution
+- Multi-task orchestration and dependency graphs
+- Planning and deterministic execution
+- Agent placement and worker lifecycle
+- Model and provider abstraction
+- Capability and tool discovery
+- Authorization, policy and security boundaries
+- Observation, critique, reasoning and verification
+- Execution attempts, leases and fencing
+- Checkpoints, recovery and replanning
+- Developer intelligence
+- OS-agnostic execution with future NEYTRA OS integration
+
+## Architecture
+
+NIP separates intelligence from any single model, application or operating system. Its target lifecycle is:
+
+Understand → Decompose → Plan → Discover → Select → Authorize → Execute → Observe → Critique → Reason → Verify → Recover / Replan → Learn
+
+## Projects
+
+- Website: https://neytraintelligence.com/
+- NIP: https://github.com/thedeveloperyug/NIP
+- Website source: https://github.com/thedeveloperyug/neytra-intelligence
+- NEYTRA OS: https://github.com/thedeveloperyug/Neytra_OS
+
+## Founder
+
+Yogesh Pandey — Founder and creator of the NEYTRA platform vision.
+
+https://www.linkedin.com/in/thedeveloperyug
+
+## Contact
+
+thedeveloperyug@gmail.com
