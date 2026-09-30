@@ -2179,3 +2179,432 @@ main>section:not(.hero){
     grid-template-columns:1fr !important;
   }
 }
+
+
+/* ========================================================================== */
+/* FINAL LIGHT UI AUDIT — remove legacy dark surfaces and visual noise         */
+/* ========================================================================== */
+
+html, body {
+  background:#ffffff !important;
+  color:#202124 !important;
+}
+
+body, main, main > section, footer,
+.intro, .nip-section, .execution-section, .network,
+.any-os-section, .people-section, .cta {
+  background:#ffffff !important;
+}
+
+/* One predictable desktop content rail. */
+main > section:not(.hero),
+.nip-section,
+.execution-section,
+.network,
+.any-os-section,
+.people-section,
+.cta,
+.ownership {
+  width:min(1200px,calc(100% - 64px)) !important;
+  max-width:1200px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  box-sizing:border-box !important;
+}
+
+/* Architecture is intentionally one contained composition, never viewport-wide. */
+#architecture .user-architecture {
+  width:100% !important;
+  max-width:1120px !important;
+  margin:28px auto 0 !important;
+  padding:0 !important;
+  box-sizing:border-box !important;
+}
+
+/* All architecture/workflow surfaces use the same light visual language. */
+.user-prompt,
+.intel-layer,
+.agents-layer,
+.routing-layer,
+.parallel-layer,
+.environment-layer,
+.verification-layer,
+.architecture-principle,
+.nip-agent-build,
+.execution-flow > div,
+.terminal-panel,
+.cards article,
+.cap article,
+.timeline article,
+.feature-grid article,
+.model-family,
+.model-chip,
+.intel-node,
+.agent-grid > div,
+.graph-tasks > div,
+.graph-start,
+.graph-result,
+.environment-grid span,
+.verification-flow span,
+.verification-flow strong,
+.nip-idea-flow,
+.nip-idea-flow span,
+.nip-idea-flow strong {
+  background:#ffffff !important;
+  color:#202124 !important;
+  border-color:#e8eaed !important;
+  box-shadow:0 1px 3px rgba(60,64,67,.08) !important;
+}
+
+/* Remove gradients/pseudo overlays responsible for dark patches and moving highlights. */
+.user-prompt,
+.intel-layer,
+.agents-layer,
+.routing-layer,
+.parallel-layer,
+.environment-layer,
+.verification-layer,
+.architecture-principle,
+.nip-agent-build,
+.model-family,
+.nip-idea-flow,
+.terminal-panel {
+  background-image:none !important;
+}
+
+.user-prompt::before,
+.user-prompt::after,
+.intel-layer::before,
+.intel-layer::after,
+.agents-layer::before,
+.agents-layer::after,
+.routing-layer::before,
+.routing-layer::after,
+.parallel-layer::before,
+.parallel-layer::after,
+.environment-layer::before,
+.environment-layer::after,
+.verification-layer::before,
+.verification-layer::after,
+.architecture-principle::before,
+.architecture-principle::after,
+.terminal-panel::before,
+.terminal-panel::after,
+.nip-agent-build::before,
+.nip-agent-build::after,
+.model-family::before,
+.model-family::after,
+.nip-idea-flow::before,
+.nip-idea-flow::after {
+  display:none !important;
+  content:none !important;
+  animation:none !important;
+}
+
+/* High-contrast typography on every light surface. */
+.user-prompt *,
+.intel-layer *,
+.agents-layer *,
+.routing-layer *,
+.parallel-layer *,
+.environment-layer *,
+.verification-layer *,
+.architecture-principle *,
+.nip-agent-build *,
+.execution-flow > div *,
+.terminal-panel *,
+.model-family *,
+.model-chip *,
+.intel-node *,
+.agent-grid > div *,
+.graph-tasks > div *,
+.environment-grid span *,
+.verification-flow span *,
+.verification-flow strong *,
+.nip-idea-flow * {
+  text-shadow:none !important;
+}
+
+.user-prompt b,
+.user-prompt strong,
+.intel-layer b,
+.agents-layer b,
+.routing-layer b,
+.parallel-layer b,
+.environment-layer b,
+.verification-layer b,
+.architecture-principle b,
+.nip-agent-build b,
+.execution-flow b,
+.model-family b,
+.model-chip b,
+.intel-node b,
+.agent-grid b,
+.graph-tasks b,
+.graph-start,
+.graph-result {
+  color:#202124 !important;
+}
+
+.user-prompt p,
+.user-prompt small,
+.user-prompt .chat-bubble,
+.user-prompt .chat-bubble.multi,
+.intel-layer small,
+.agents-layer small,
+.routing-layer small,
+.parallel-layer small,
+.environment-layer small,
+.verification-layer small,
+.architecture-principle p,
+.nip-agent-build small,
+.execution-flow small,
+.model-family small,
+.model-chip small,
+.intel-node small,
+.agent-grid small,
+.graph-tasks small,
+.environment-grid span {
+  color:#5f6368 !important;
+}
+
+.user-prompt .chat-bubble,
+.user-prompt .chat-bubble.multi {
+  background:#f8fafd !important;
+  color:#3c4043 !important;
+  border:1px solid #e8eaed !important;
+  box-shadow:none !important;
+}
+
+.user-prompt .chat-bubble span,
+.build-steps span,
+.build-steps strong,
+.example-task-status {
+  background:#f1f6ff !important;
+  color:#1a73e8 !important;
+  border-color:#c7d8f7 !important;
+  animation:none !important;
+}
+
+.build-steps i,
+.nip-idea-flow i,
+.verification-flow i {
+  color:#1a73e8 !important;
+  animation:none !important;
+}
+
+.layer-title span,
+.build-label span,
+.chat-orb,
+.card-icon,
+.cap article > span {
+  color:#1a73e8 !important;
+}
+
+.execution-flow {
+  width:100% !important;
+  max-width:1120px !important;
+  margin:28px auto 0 !important;
+  align-items:stretch !important;
+}
+
+.execution-flow > div {
+  min-height:112px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+}
+
+.execution-flow > i {
+  color:#1a73e8 !important;
+  opacity:.7 !important;
+  animation:none !important;
+}
+
+.terminal-panel,
+.dev pre {
+  background:#f8fafd !important;
+  color:#3c4043 !important;
+  border:1px solid #e8eaed !important;
+  box-shadow:none !important;
+  text-shadow:none !important;
+}
+.terminal-panel > span,
+.terminal-panel b {
+  color:#1a73e8 !important;
+}
+
+/* Architecture connectors: static, subtle, and readable. */
+.user-arrow {
+  color:#5f6368 !important;
+}
+.user-arrow::before,
+.arch-arrow::before {
+  background:none !important;
+  border-left:2px dotted #c5d0df !important;
+  box-shadow:none !important;
+  animation:none !important;
+}
+.user-arrow b,
+.user-arrow small {
+  background:#ffffff !important;
+  color:#5f6368 !important;
+  text-shadow:none !important;
+}
+
+/* Section 7 stays completely static and light. */
+.any-os-section,
+.os-adaptive,
+.os-platforms,
+.os-platforms article,
+.adaptive-flow,
+.adaptive-note {
+  background:#ffffff !important;
+  background-image:none !important;
+  animation:none !important;
+}
+.os-adaptive-center,
+.adaptive-core,
+.adaptive-orbit,
+.os-adaptive-center::after {
+  display:none !important;
+  animation:none !important;
+}
+.os-adaptive {
+  min-height:0 !important;
+  margin:28px auto 14px !important;
+}
+.os-platforms {
+  width:100% !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:16px !important;
+}
+.os-platforms article {
+  min-height:112px !important;
+  border:1px solid #e8eaed !important;
+  box-shadow:0 1px 3px rgba(60,64,67,.08) !important;
+}
+.os-platforms article:hover {
+  transform:none !important;
+  box-shadow:0 1px 3px rgba(60,64,67,.08) !important;
+}
+.adaptive-flow {
+  border:1px solid #e8eaed !important;
+  background:#f8fafd !important;
+  color:#5f6368 !important;
+  box-shadow:none !important;
+}
+.adaptive-note {
+  border:1px solid #e8eaed !important;
+  box-shadow:0 1px 3px rgba(60,64,67,.08) !important;
+}
+.adaptive-note b {
+  color:#202124 !important;
+}
+.adaptive-note p {
+  color:#5f6368 !important;
+}
+
+/* Disable decorative motion globally; preserve only the intentional section fade. */
+.hero-grid,
+.live-dot,
+.core-ring,
+.core-grid,
+.user-arrow span,
+.arch-arrow span,
+.graph-lines i::before,
+.graph-merge::after,
+.model-chip::after,
+.agent-grid > div::after,
+.environment-grid span::after,
+.os-platforms article::after {
+  animation:none !important;
+}
+
+.cards article:hover,
+.cap article:hover,
+.timeline article:hover,
+.user-prompt:hover,
+.model-chip:hover,
+.model-chip.active,
+.agent-grid > div:hover,
+.os-platforms article:hover {
+  transform:none !important;
+}
+
+/* The only motion left is the content reveal/fade. */
+.reveal {
+  animation:none !important;
+  transition:opacity .55s ease !important;
+}
+.reveal.visible {
+  animation:none !important;
+  transform:none !important;
+}
+.reveal h1,.reveal h2,.reveal h3,.reveal h4,.reveal p,
+.reveal .eyebrow,.reveal .buttons,.reveal .section-heading,
+.reveal .lifecycle,.reveal .feature-grid,.reveal .people-carousel,
+.reveal .execution-flow,.reveal .user-architecture,
+.reveal .terminal-panel,.reveal .adaptive-flow,.reveal .adaptive-note {
+  transition:opacity .55s ease !important;
+}
+
+/* Section spacing: compact without becoming cramped. */
+main > section:not(.hero) {
+  padding-top:82px !important;
+  padding-bottom:82px !important;
+}
+.intro {
+  padding-top:92px !important;
+}
+.cta {
+  padding-top:88px !important;
+  padding-bottom:82px !important;
+}
+.ownership {
+  margin-top:18px !important;
+  margin-bottom:82px !important;
+}
+
+/* Responsive gutters. */
+@media(max-width:980px){
+  main > section:not(.hero),
+  .nip-section,
+  .execution-section,
+  .network,
+  .any-os-section,
+  .people-section,
+  .cta,
+  .ownership {
+    width:calc(100% - 40px) !important;
+    max-width:1200px !important;
+  }
+  .os-platforms {
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+@media(max-width:650px){
+  main > section:not(.hero),
+  .nip-section,
+  .execution-section,
+  .network,
+  .any-os-section,
+  .people-section,
+  .cta,
+  .ownership {
+    width:calc(100% - 28px) !important;
+  }
+  main > section:not(.hero) {
+    padding-top:64px !important;
+    padding-bottom:64px !important;
+  }
+  .intro {
+    padding-top:72px !important;
+  }
+  .os-platforms {
+    grid-template-columns:1fr !important;
+  }
+  .execution-flow {
+    grid-template-columns:1fr !important;
+  }
+}
