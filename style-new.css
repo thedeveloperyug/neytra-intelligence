@@ -1716,3 +1716,262 @@ footer a:hover{
     opacity:.18 !important;
   }
 }
+
+
+/* ========================================================================== */
+/* Final clean product pass                                                   */
+/* ========================================================================== */
+
+/* No dark surfaces anywhere in the public product UI. */
+html,body,main,main>section,footer{
+  background:#fff !important;
+  color:var(--text) !important;
+}
+.terminal-panel,.dev pre{
+  background:#f8fafd !important;
+  color:var(--text-2) !important;
+  border:1px solid var(--line-soft) !important;
+}
+.terminal-panel>span,.terminal-panel b{color:var(--blue) !important}
+
+/* Brand visibility: dark text on the white navigation surface. */
+.site-header .brand,
+.site-header .brand>span:last-child{
+  color:#202124 !important;
+  -webkit-text-fill-color:#202124 !important;
+  background:none !important;
+  text-shadow:none !important;
+}
+.site-header .brand i{
+  color:#5f6368 !important;
+}
+
+/* Remove the legacy giant orbital/logo treatment. Keep only a subtle transparent logo float. */
+.hero-core{
+  width:min(30vw,390px) !important;
+  right:max(5%,calc((100vw - 1280px)/2)) !important;
+  top:23% !important;
+  transform:none !important;
+  animation:heroLogoFloat 6s ease-in-out infinite !important;
+}
+.hero-core .core-ring,
+.hero-core .core-grid,
+.hero-core .core-label,
+.hero-core .motion-hint{
+  display:none !important;
+}
+.hero-core .core-logo{
+  width:72% !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  animation:none !important;
+}
+.hero-core .core-logo img{
+  width:78% !important;
+  filter:drop-shadow(0 12px 28px rgba(26,115,232,.14)) !important;
+  animation:heroLogoBreath 4s ease-in-out infinite !important;
+}
+@keyframes heroLogoFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+@keyframes heroLogoBreath{
+  0%,100%{opacity:.90;transform:scale(1)}
+  50%{opacity:1;transform:scale(1.025)}
+}
+
+/* Remove card-border light sweeps and all decorative card pseudo animations. */
+:where(
+  .lifecycle > div,.cards article,.cap article,.timeline article,
+  .execution-flow > div,.os-grid > div,.person-card,.intel-node,
+  .model-chip,.agent-grid > div,.graph-tasks > div,.os-platforms article,
+  .arch-layer,.nip-node,.founder-card,.ownership,.terminal-panel,
+  .user-prompt,.intel-layer,.routing-layer,.agents-layer,.parallel-layer,
+  .environment-layer,.adaptive-note,.architecture-principle,.model-family,
+  .verification-layer,.feature-grid article
+)::before,
+:where(
+  .lifecycle > div,.cards article,.cap article,.timeline article,
+  .execution-flow > div,.os-grid > div,.person-card,.intel-node,
+  .model-chip,.agent-grid > div,.graph-tasks > div,.os-platforms article,
+  .arch-layer,.nip-node,.founder-card,.ownership,.terminal-panel,
+  .user-prompt,.intel-layer,.routing-layer,.agents-layer,.parallel-layer,
+  .environment-layer,.adaptive-note,.architecture-principle,.model-family,
+  .verification-layer,.feature-grid article
+)::after{
+  animation:none !important;
+  background:none !important;
+  box-shadow:none !important;
+}
+
+/* Cards remain static and light. */
+.cards article,.cap article,.timeline article,.feature-grid article,
+.person-card,.lifecycle>div,.arch-card,.arch-layer,.execution-flow>div,
+.os-grid>div,.nip-node,.intel-layer,.agents-layer,.routing-layer,
+.parallel-layer,.environment-layer,.verification-layer,.model-family,
+.user-prompt,.ownership,.terminal-panel{
+  animation:none !important;
+  box-shadow:0 1px 2px rgba(60,64,67,.06) !important;
+}
+
+/* Architecture: replace arrow-flow animation with simple dotted connectors. */
+.user-arrow{
+  position:relative !important;
+  min-height:72px !important;
+  margin:8px auto !important;
+  padding:28px 0 18px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:5px !important;
+  color:#5f6368 !important;
+}
+.user-arrow::before{
+  content:"" !important;
+  position:absolute !important;
+  top:0 !important;
+  bottom:0 !important;
+  left:50% !important;
+  width:0 !important;
+  border-left:2px dotted #b8c7dc !important;
+  transform:translateX(-50%) !important;
+  animation:none !important;
+}
+.user-arrow span{
+  display:none !important;
+}
+.user-arrow b,
+.user-arrow small{
+  position:relative !important;
+  z-index:1 !important;
+  background:#fff !important;
+  padding:2px 10px !important;
+}
+.user-arrow b{
+  color:#3c4043 !important;
+  font-size:10px !important;
+}
+.user-arrow small{
+  color:#5f6368 !important;
+}
+
+/* Static dotted architecture connectors wherever flow arrows were used. */
+.arch-arrow{
+  height:48px !important;
+}
+.arch-arrow::before{
+  background:none !important;
+  border-left:2px dotted #b8c7dc !important;
+  width:0 !important;
+  animation:none !important;
+}
+.arch-arrow span{
+  display:none !important;
+  animation:none !important;
+}
+.execution-flow>i,
+.verification-flow>i,
+.nip-idea-flow>i{
+  animation:none !important;
+}
+
+/* Make text and section reveals consistent, without moving/animating cards independently. */
+.reveal{
+  opacity:0 !important;
+  transform:translateY(18px) !important;
+  transition:opacity .65s ease,transform .65s ease !important;
+}
+.reveal.visible{
+  opacity:1 !important;
+  transform:none !important;
+}
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal p,
+.reveal .eyebrow,
+.reveal .buttons,
+.reveal .layer-title,
+.reveal .section-heading,
+.reveal .lifecycle,
+.reveal .feature-grid,
+.reveal .people-carousel,
+.reveal .execution-flow,
+.reveal .verification-flow,
+.reveal .terminal-panel,
+.reveal .ownership-badge,
+.reveal .architecture-principle,
+.reveal .user-architecture{
+  opacity:0;
+  transform:translateY(12px);
+  transition:opacity .6s ease,transform .6s ease;
+}
+.reveal.visible h1,
+.reveal.visible h2,
+.reveal.visible h3,
+.reveal.visible h4,
+.reveal.visible p,
+.reveal.visible .eyebrow,
+.reveal.visible .buttons,
+.reveal.visible .layer-title,
+.reveal.visible .section-heading,
+.reveal.visible .lifecycle,
+.reveal.visible .feature-grid,
+.reveal.visible .people-carousel,
+.reveal.visible .execution-flow,
+.reveal.visible .verification-flow,
+.reveal.visible .terminal-panel,
+.reveal.visible .ownership-badge,
+.reveal.visible .architecture-principle,
+.reveal.visible .user-architecture{
+  opacity:1;
+  transform:none;
+}
+.reveal.visible h1{transition-delay:.04s}
+.reveal.visible h2{transition-delay:.04s}
+.reveal.visible p{transition-delay:.10s}
+.reveal.visible .buttons{transition-delay:.14s}
+.reveal.visible .lifecycle,
+.reveal.visible .feature-grid,
+.reveal.visible .people-carousel,
+.reveal.visible .execution-flow,
+.reveal.visible .user-architecture{transition-delay:.16s}
+
+/* Disable decorative movement on mobile while retaining fade-in. */
+@media(max-width:980px){
+  .hero-core{
+    width:300px !important;
+    right:-20px !important;
+    top:30% !important;
+    opacity:.55 !important;
+  }
+}
+@media(max-width:650px){
+  .hero-core{
+    width:250px !important;
+    right:-35px !important;
+    top:39% !important;
+    opacity:.28 !important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-core,
+  .hero-core .core-logo img{
+    animation:none !important;
+  }
+  .reveal,
+  .reveal.visible,
+  .reveal h1,.reveal h2,.reveal h3,.reveal h4,.reveal p,
+  .reveal .eyebrow,.reveal .buttons,.reveal .layer-title,
+  .reveal .section-heading,.reveal .lifecycle,.reveal .feature-grid,
+  .reveal .people-carousel,.reveal .execution-flow,.reveal .verification-flow,
+  .reveal .terminal-panel,.reveal .ownership-badge,
+  .reveal .architecture-principle,.reveal .user-architecture{
+    opacity:1 !important;
+    transform:none !important;
+    transition:none !important;
+  }
+}
