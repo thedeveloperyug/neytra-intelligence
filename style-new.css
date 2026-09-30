@@ -1975,3 +1975,207 @@ html,body,main,main>section,footer{
     transition:none !important;
   }
 }
+
+
+/* ========================================================================== */
+/* Final cleanup: light surfaces, consistent content gutters, static section 7 */
+/* ========================================================================== */
+
+:root{
+  --bg:#ffffff !important;
+  --surface:#ffffff !important;
+  --surface-soft:#f8fafd !important;
+  --text:#202124 !important;
+  --text-2:#3c4043 !important;
+  --muted:#5f6368 !important;
+  --line:#dadce0 !important;
+  --line-soft:#e8eaed !important;
+  --blue:#1a73e8 !important;
+}
+
+/* Remove the old decorative background layers that made the page look dark/messy. */
+#particle-field,
+.noise,
+.cursor-glow{
+  display:none !important;
+}
+
+html,body,main,main>section,footer{
+  background:#fff !important;
+  color:var(--text) !important;
+}
+
+/* Keep every normal section inside the same desktop content grid. */
+main>section:not(.hero){
+  width:min(calc(100% - 64px),1200px) !important;
+  max-width:1200px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+
+/* Architecture and network previously escaped the common gutters. */
+.nip-section,
+.network{
+  width:min(calc(100% - 64px),1200px) !important;
+  max-width:1200px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  background:#fff !important;
+}
+
+/* Reduce excessive vertical whitespace between sections. */
+main>section:not(.hero){
+  padding-top:92px !important;
+  padding-bottom:92px !important;
+}
+.intro{
+  padding-top:105px !important;
+}
+.cta{
+  padding-top:105px !important;
+  padding-bottom:100px !important;
+}
+.people-section{
+  padding-bottom:70px !important;
+}
+
+/* Section 7: fully light, clean and completely static. */
+.any-os-section{
+  background:#fff !important;
+  overflow:visible !important;
+}
+.any-os-section:before{
+  display:none !important;
+}
+.os-adaptive{
+  min-height:360px !important;
+  margin:24px auto 12px !important;
+}
+.os-adaptive-center{
+  display:none !important;
+}
+.os-platforms{
+  position:relative !important;
+  width:100% !important;
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:14px !important;
+}
+.os-platforms article{
+  min-height:105px !important;
+  background:#fff !important;
+  border:1px solid var(--line-soft) !important;
+  color:var(--text) !important;
+  box-shadow:0 1px 2px rgba(60,64,67,.06) !important;
+  transition:none !important;
+  animation:none !important;
+}
+.os-platforms article:hover{
+  transform:none !important;
+  border-color:var(--line-soft) !important;
+  box-shadow:0 1px 2px rgba(60,64,67,.06) !important;
+}
+.os-platforms article:before,
+.os-platforms article:after{
+  display:none !important;
+  animation:none !important;
+}
+.os-platforms span{
+  color:var(--blue) !important;
+}
+.os-platforms b{
+  color:var(--text) !important;
+}
+.os-platforms small{
+  color:var(--muted) !important;
+}
+.adaptive-flow{
+  background:#f8fafd !important;
+  border:1px solid var(--line-soft) !important;
+  color:var(--muted) !important;
+  animation:none !important;
+}
+.adaptive-flow i{
+  animation:none !important;
+}
+.adaptive-flow b,
+.adaptive-flow strong{
+  color:var(--text-2) !important;
+}
+.adaptive-note{
+  background:#fff !important;
+  border:1px solid var(--line-soft) !important;
+  box-shadow:0 1px 2px rgba(60,64,67,.06) !important;
+  animation:none !important;
+}
+.adaptive-note:before,
+.adaptive-note:after{
+  display:none !important;
+  animation:none !important;
+}
+
+/* Architecture connectors stay simple and static. */
+.user-arrow,
+.arch-arrow{
+  animation:none !important;
+}
+.user-arrow::before,
+.arch-arrow::before{
+  animation:none !important;
+}
+
+/* No standalone scroll instruction. */
+.scroll-cue{
+  display:none !important;
+}
+
+/* Keep reveal/fade transitions, but don't introduce movement inside section 7. */
+.any-os-section.reveal,
+.any-os-section.reveal.visible,
+.any-os-section.reveal .section-heading,
+.any-os-section.reveal.visible .section-heading,
+.any-os-section.reveal .os-adaptive,
+.any-os-section.reveal.visible .os-adaptive,
+.any-os-section.reveal .adaptive-flow,
+.any-os-section.reveal.visible .adaptive-flow,
+.any-os-section.reveal .adaptive-note,
+.any-os-section.reveal.visible .adaptive-note{
+  transition:opacity .6s ease !important;
+  transform:none !important;
+}
+
+/* Desktop/tablet/mobile gutters. */
+@media(max-width:980px){
+  main>section:not(.hero),
+  .nip-section,
+  .network{
+    width:min(calc(100% - 40px),1200px) !important;
+    max-width:1200px !important;
+  }
+  .os-platforms{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+@media(max-width:650px){
+  main>section:not(.hero),
+  .nip-section,
+  .network{
+    width:calc(100% - 40px) !important;
+  }
+  main>section:not(.hero){
+    padding-top:72px !important;
+    padding-bottom:72px !important;
+  }
+  .intro{
+    padding-top:82px !important;
+  }
+  .os-adaptive{
+    min-height:0 !important;
+    margin-top:18px !important;
+  }
+  .os-platforms{
+    grid-template-columns:1fr !important;
+  }
+}
