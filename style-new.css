@@ -2678,3 +2678,22 @@ main > section:not(.hero) {
   border:0 !important;
   box-shadow:none !important;
 }
+
+
+/* NIP IDEA readability: override legacy low-contrast paragraph rules. */
+.architecture-principle .nip-idea-body,
+.architecture-principle .nip-idea-recovery{
+  color:#3c4043 !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+.architecture-principle .nip-idea-body strong,
+.architecture-principle .nip-idea-recovery strong{
+  color:#202124 !important;
+  font-weight:700 !important;
+}
+.architecture-principle .nip-idea-label{
+  color:#1a73e8 !important;
+  text-shadow:none !important;
+  opacity:1 !important;
+}
