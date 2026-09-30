@@ -2608,3 +2608,73 @@ main > section:not(.hero) {
     grid-template-columns:1fr !important;
   }
 }
+
+
+/* Final visual corrections: center proprietary ownership content and remove
+   the remaining dark model-routing surfaces. */
+.ownership{
+  text-align:center !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+}
+.ownership-badge,
+.ownership h2,
+.ownership p,
+.ownership > a{
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+.ownership p{
+  max-width:780px !important;
+  text-align:center !important;
+}
+
+.routing-layer .model-routing{
+  background:#ffffff !important;
+  background-image:none !important;
+}
+.routing-layer .model-family{
+  background:#ffffff !important;
+  background-image:none !important;
+  border-color:#e8eaed !important;
+  box-shadow:0 1px 3px rgba(60,64,67,.08) !important;
+}
+.routing-layer .model-family.local{
+  background:#ffffff !important;
+  border-color:#e8eaed !important;
+}
+.routing-layer .model-family span{
+  background:#f8fafd !important;
+  color:#3c4043 !important;
+  border:1px solid #e8eaed !important;
+  box-shadow:none !important;
+}
+.routing-layer .model-family b{
+  color:#202124 !important;
+}
+.routing-layer .route-example{
+  background:#ffffff !important;
+  background-image:none !important;
+  border:0 !important;
+  color:#5f6368 !important;
+  box-shadow:none !important;
+}
+.routing-layer .route-example span{
+  color:#5f6368 !important;
+}
+.routing-layer .route-example b{
+  color:#1a73e8 !important;
+}
+.routing-layer .route-example strong{
+  background:#f8fafd !important;
+  color:#5f6368 !important;
+  border:1px solid #e8eaed !important;
+  box-shadow:none !important;
+}
+.routing-layer .router-note{
+  background:#ffffff !important;
+  color:#5f6368 !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
